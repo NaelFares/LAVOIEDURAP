@@ -1,0 +1,192 @@
+
+@font-face {
+  font-family: 'Akira';
+  src: url('akira_expanded/AkiraExpandedDemo.otf');
+}
+
+@font-face {
+  font-family: 'Lemon';
+  src: url('lemon_milk/LEMONMILK-Medium.otf');
+}
+
+@font-face {
+  font-family: 'LemonLight';
+  src: url('lemon_milk/LEMONMILK-Light.otf');
+}
+
+@font-face {
+  font-family: 'LouisGeorge';
+  src: url('louis_george_caf/Louis George Cafe.ttf');
+}
+
+body {
+  background-color: #131315;
+  font-size: 1.2rem;
+}
+
+
+header {
+  height: 200vh;
+}
+
+.container {
+  /* hide fixed overflow contents */
+  clip: rect(0, auto, auto, 0);
+
+  /* does not work if overflow = visible */
+  overflow: hidden;
+
+  /* only works with absolute positioning */
+  position: absolute;
+
+  /* Make sure containers are full-width and height */
+  height: 100vh;
+  left: 0;
+  width: 100%;
+  
+  
+  /* safari hack */
+  -webkit-mask-image: -webkit-linear-gradient(top, #ffffff 0%,#ffffff 100%);
+}
+
+.container_solid {
+  background-image: linear-gradient(to bottom right, #B1471E, black,  black);
+  /* position this container at the top of its parent element */
+  top: 0;
+}
+
+.title_wrapper {
+  position: fixed;
+  display: block;  
+  margin: auto;
+  width: 100%;
+  /* center the text wrapper vertically */
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.title_wrapper h1 {
+  text-align: center;
+  font-size: 66px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: Lemon, sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.4em;
+}
+
+.container_solid p {
+  top: 300px;
+  transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+  font-size: 10px;
+  text-transform: uppercase;
+  font-family: Lemon, sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.4em;
+  color: #ffffff;
+  position: fixed;
+}
+
+.container_solid .title_wrapper h1 {
+  /* the text background */
+  background-color: #ffffff;
+  background-size: 100vw auto;
+  background-position: center;
+  
+  /* clip the text is possible */
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  
+  /* fallback text color */
+  color: black;
+}
+
+.container_image {
+  /* Grab a free image from unsplash */
+  background-image: url(https://www.musiculture.fr/wp-content/uploads/2020/05/South-Bronx-Park-Jam-1984.jpg);
+  background-size:100vw auto;
+  background-position: center;
+  background-attachment: fixed;
+  
+  /* position the second container below the first container */
+  top: 100vh;
+}
+
+.container_image .title_wrapper h1 {
+  color: white;
+}
+
+section {
+  min-height: 100vh;
+  padding: 2em;
+  margin: auto;
+  max-width: 800px;
+  background-color: #131315;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+section h2 {
+  font-family: LouisGeorge, sans-serif;
+}
+
+section p {
+  font-family: LouisGeorge, sans-serif;
+}
+
+section img {
+  text-align: center;
+}
+
+.INFO {
+  background-color: #131315;
+  color: white;
+  display: flex;
+  flex-direction: row; /* changer la direction de la disposition des éléments */
+  align-items: center; /* centrer les éléments verticalement */
+}
+
+/**
+
+CENTRER UNE IMAGE SI BESOIN 
+
+.koolHerc {
+  display: block; 
+  margin: auto; 
+  width: 300px;
+	height: auto;
+}
+**/
+
+.koolHerc {
+  display: block;
+  margin: auto;
+  width: 300px;
+  height: auto;
+  -webkit-filter: blur(3px);
+	filter: blur(3px);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.koolHerc:hover {
+	-webkit-filter: blur(0);
+	filter: blur(0);
+  -webkit-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+}
+
+.infoKoolHerc {
+  flex: 1; /* prendre tout l'espace restant */
+  margin-left: 15em; /* ajouter un espace entre l'image et le texte */
+  font-family: Lemon, sans-serif;
+}
+
+/** QUAND ON INSERE UNE VIDEO **/ 
